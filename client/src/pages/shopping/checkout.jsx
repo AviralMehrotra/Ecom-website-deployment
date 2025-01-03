@@ -44,7 +44,10 @@ function ShoppingCheckout() {
             </div>
           </div>
           <div className="mt-4 w-full">
-            <Button className="w-full">Proceed to Payment</Button>
+            <Button disabled className="w-full">
+              {/* Proceed to Payment */}
+              Payment functionality comming Soon
+            </Button>
           </div>
         </div>
       </div>

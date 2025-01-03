@@ -1,5 +1,5 @@
-import { Label } from "@radix-ui/react-label";
 import { Input } from "../ui/input";
+import { Label } from "../ui/label";
 import {
   Select,
   SelectContent,
@@ -9,7 +9,6 @@ import {
 } from "../ui/select";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
-import RichTextEditor from "../RichTextEditor";
 
 function CommonForm({
   formControls,
@@ -19,9 +18,10 @@ function CommonForm({
   buttonText,
   isBtnDisabled,
 }) {
-  function renderInputByComponentType(getControlItem) {
+  function renderInputsByComponentType(getControlItem) {
     let element = null;
     const value = formData[getControlItem.name] || "";
+
     switch (getControlItem.componentType) {
       case "input":
         element = (
@@ -70,7 +70,7 @@ function CommonForm({
         break;
       case "textarea":
         element = (
-          <RichTextEditor
+          <Textarea
             name={getControlItem.name}
             placeholder={getControlItem.placeholder}
             id={getControlItem.id}
@@ -78,7 +78,7 @@ function CommonForm({
             onChange={(event) =>
               setFormData({
                 ...formData,
-                [getControlItem.name]: event,
+                [getControlItem.name]: event.target.value,
               })
             }
           />
@@ -93,6 +93,7 @@ function CommonForm({
             placeholder={getControlItem.placeholder}
             id={getControlItem.name}
             type={getControlItem.type}
+            value={value}
             onChange={(event) =>
               setFormData({
                 ...formData,
@@ -103,15 +104,17 @@ function CommonForm({
         );
         break;
     }
+
     return element;
   }
+
   return (
     <form onSubmit={onSubmit}>
       <div className="flex flex-col gap-3">
         {formControls.map((controlItem) => (
           <div className="grid w-full gap-1.5" key={controlItem.name}>
             <Label className="mb-1">{controlItem.label}</Label>
-            {renderInputByComponentType(controlItem)}
+            {renderInputsByComponentType(controlItem)}
           </div>
         ))}
       </div>

@@ -72,13 +72,10 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
               {productDetails?.title}
             </DialogTitle>
             {/* <h1 className="text-3xl font-extrabold">{productDetails?.title}</h1> */}
-            {/* <p className="text-muted-foreground text-l mb-5 mt-4 overflow-auto">
+            <p className="text-muted-foreground text-l mb-5 mt-4 overflow-auto">
               {productDetails?.description}
-            </p> */}
-            <div
-              className="text-muted-foreground text-l mb-5 mt-4 overflow-auto"
-              dangerouslySetInnerHTML={{ __html: productDetails?.description }}
-            />
+            </p>
+
             <div className="flex items-center justify-between">
               <p
                 className={` text-3xl font-bold text-primary ${
@@ -87,13 +84,23 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
               >
                 ₹{productDetails?.price}
               </p>
+
               {productDetails?.salePrice > 0 ? (
-                <p className="text-3xl font-bold text-muted-foreground">
+                <span className="text-3xl font-bold">
                   ₹{productDetails?.salePrice}
-                </p>
+                  <sup className="text-red-500 text-md ml-1">
+                    {Math.round(
+                      ((productDetails?.price - productDetails?.salePrice) /
+                        productDetails?.price) *
+                        100
+                    )}
+                    %
+                  </sup>
+                </span>
               ) : null}
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 mt-5">
+              <h3 className="font-bold text-xl">Product Rating: </h3>
               <div className="flex items-center gap-0.5">
                 <StarIcon className="w-5 h-5 fill-primary" />
                 <StarIcon className="w-5 h-5 fill-primary" />
@@ -151,9 +158,9 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
                       <StarIcon className="w-4 h-4 fill-primary" />
                       <StarIcon className="w-4 h-4 fill-primary" />
                       <StarIcon className="w-4 h-4 fill-primary" />
-                      <StarIcon className="w-4 h-4 fill-primary" />
+                      <StarIcon className="w-4 h-4 " />
                     </div>
-                    <p className="text-muted-foreground">Nice Product</p>
+                    <p className="text-muted-foreground">Good Product</p>
                   </div>
                 </div>
                 {/* <div className="flex gap-4">
