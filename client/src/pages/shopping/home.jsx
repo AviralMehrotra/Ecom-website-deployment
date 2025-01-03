@@ -8,11 +8,15 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
   CookingPot,
+  Droplet,
+  Droplets,
   Fan,
+  FanIcon,
   GlassWater,
   Lightbulb,
   Power,
   Snowflake,
+  Sparkles,
   Sun,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -34,6 +38,9 @@ const categoriesWithIcon = [
   { id: "summerProd", label: "Summer Essentials", icon: Sun },
   { id: "winterProd", label: "Winter Essentials", icon: Snowflake },
   { id: "securitySystem", label: "Security Systems", icon: Cctv },
+  { id: "lighting", label: "Lighting", icon: Lightbulb },
+  { id: "purifier", label: "Water Purifier", icon: Droplets },
+  { id: "personalCare", label: "Personal Care", icon: Sparkles },
 ];
 
 const brandsWithIcon = [
@@ -43,6 +50,14 @@ const brandsWithIcon = [
   { id: "phillips", label: "Phillips", icon: Lightbulb },
   { id: "microtek", label: "Microtek", icon: BatteryCharging },
   { id: "livpure", label: "Livpure", icon: GlassWater },
+  { id: "luminous", label: "Luminous", icon: GlassWater },
+  { id: "indo", label: "Indo", icon: GlassWater },
+  { id: "symphony", label: "Symphony", icon: GlassWater },
+  { id: "crompton", label: "Crompton", icon: GlassWater },
+  { id: "vguard", label: "V-Guard", icon: Droplet },
+  { id: "vansal", label: "Vansal", icon: FanIcon },
+  { id: "kent", label: "Kent", icon: Droplet },
+  { id: "eureka", label: "Eureka", icon: Droplet },
 ];
 
 function ShoppingHome() {
@@ -169,7 +184,7 @@ function ShoppingHome() {
             Shop by Category
           </h2>
           {/*here below grid-cols-5 defines how many icons can be there if you want to add more icons to home you can increase it*/}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {categoriesWithIcon.map((categoryItem) => (
               <Card
                 onClick={() =>
@@ -191,7 +206,7 @@ function ShoppingHome() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Shop by Brand</h2>
           {/*here below grid-cols-5 defines how many icons can be there if you want to add more icons to home you can increase it*/}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {brandsWithIcon.map((brandItem) => (
               <Card
                 onClick={() => handleNavigateToListingPage(brandItem, "brand")}

@@ -99,7 +99,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
                 </span>
               ) : null}
             </div>
-            <div className="flex items-center gap-2 mt-5">
+            {/* <div className="flex items-center gap-2 mt-5">
               <h3 className="font-bold text-xl">Product Rating: </h3>
               <div className="flex items-center gap-0.5">
                 <StarIcon className="w-5 h-5 fill-primary" />
@@ -109,7 +109,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
                 <StarIcon className="w-5 h-5 fill-primary" />
               </div>
               <span className="text-muted-foreground">(4.5)</span>
-            </div>
+            </div> */}
             <div className="mt-5 mb-5">
               <Button
                 className="w-full"
@@ -124,7 +124,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
               </Button>
             </div>
             <Separator />
-            <div className="max-h-[300px] overflow-auto">
+            {/* <div className="max-h-[300px] overflow-auto">
               <h2 className="text-xl font-bold mb-4 mt-2">Reviews</h2>
               <div className="grid gap-6">
                 <div className="flex gap-4">
@@ -163,30 +163,12 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
                     <p className="text-muted-foreground">Good Product</p>
                   </div>
                 </div>
-                {/* <div className="flex gap-4">
-                  <Avatar className="w-10 h-10 border">
-                    <AvatarFallback>AM</AvatarFallback>
-                  </Avatar>
-                  <div className="grid gap-1">
-                    <div className="flex item-center gap-2">
-                      <h3 className="font-semibold">Aviral Mehrotra</h3>
-                    </div>
-                    <div className="flex items-center gap-0.5">
-                      <StarIcon className="w-4 h-4 fill-primary" />
-                      <StarIcon className="w-4 h-4 fill-primary" />
-                      <StarIcon className="w-4 h-4 fill-primary" />
-                      <StarIcon className="w-4 h-4 fill-primary" />
-                      <StarIcon className="w-4 h-4 fill-primary" />
-                    </div>
-                    <p className="text-muted-foreground">Nice Product</p>
-                  </div>
-                </div> */}
               </div>
               <div className="mt-6 flex gap-2">
                 <Input placeholder="Write a review..." />
                 <Button>Submit</Button>
               </div>
-            </div>
+            </div> */}
           </div>
         </DialogContent>
       </Dialog>

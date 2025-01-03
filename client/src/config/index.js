@@ -64,6 +64,9 @@ export const addProductFormElements = [
       { id: "summerProd", label: "Summer Essentials" },
       { id: "winterProd", label: "Winter Essentials" },
       { id: "securitySystem", label: "Security Systems" },
+      { id: "lighting", label: "Lighting" },
+      { id: "purifier", label: "Water Purifier" },
+      { id: "personalCare", label: "Personal Care" },
     ],
   },
   {
@@ -77,6 +80,14 @@ export const addProductFormElements = [
       { id: "phillips", label: "Phillips" },
       { id: "microtek", label: "Microtek" },
       { id: "livpure", label: "Livpure" },
+      { id: "luminous", label: "Luminous" },
+      { id: "indo", label: "Indo" },
+      { id: "symphony", label: "Symphony" },
+      { id: "crompton", label: "Crompton" },
+      { id: "vguard", label: "V-Guard" },
+      { id: "vansal", label: "Vansal" },
+      { id: "kent", label: "Kent" },
+      { id: "eureka", label: "Eureka Forbes" },
     ],
   },
   {
@@ -134,6 +145,21 @@ export const shoppingViewHeaderMenuItems = [
     path: "/shop/listing",
   },
   {
+    id: "lighting",
+    label: "Lighting",
+    path: "/shop/listing",
+  },
+  {
+    id: "purifier",
+    label: "Water Purifier",
+    path: "/shop/listing",
+  },
+  {
+    id: "personalCare",
+    label: "Personal Care",
+    path: "/shop/listing",
+  },
+  {
     id: "search",
     label: "Search",
     path: "/shop/search",
@@ -146,6 +172,9 @@ export const categoryOptionsMap = {
   summerProd: "Summer",
   winterProd: "Winter",
   securitySystem: "Security",
+  lighting: "Lighting",
+  purifier: "Water Purifier",
+  personalCare: "Personal Care",
 };
 
 export const brandOptionsMap = {
@@ -155,6 +184,14 @@ export const brandOptionsMap = {
   phillips: "Phillips",
   microtek: "Microtek",
   livpure: "Livpure",
+  luminous: "Luminous",
+  indo: "Indo",
+  symphony: "Symphony",
+  crompton: "Crompton",
+  vguard: "V-Guard",
+  vansal: "Vansal",
+  kent: "Kent",
+  eureka: "Eureka Formes",
 };
 
 export const filterOptions = {
@@ -164,6 +201,9 @@ export const filterOptions = {
     { id: "summerProd", label: "Summer" },
     { id: "winterProd", label: "Winter" },
     { id: "securitySystem", label: "Security" },
+    { id: "lighting", label: "Lighting" },
+    { id: "purifier", label: "Water Purifier" },
+    { id: "personalCare", label: "Personal Care" },
   ],
   brand: [
     { id: "bajaj", label: "Bajaj" },
@@ -172,6 +212,14 @@ export const filterOptions = {
     { id: "phillips", label: "Phillips" },
     { id: "microtek", label: "Microtek" },
     { id: "livpure", label: "Livpure" },
+    { id: "luminous", label: "Luminous" },
+    { id: "indo", label: "Indo" },
+    { id: "symphony", label: "Symphony" },
+    { id: "crompton", label: "Crompton" },
+    { id: "vguard", label: "V-Guard" },
+    { id: "vansal", label: "Vansal" },
+    { id: "kent", label: "Kent" },
+    { id: "eureka", label: "Eureka Forbes" },
   ],
 };
 
