@@ -9,6 +9,7 @@ import {
 } from "../ui/select";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
+import RichTextEditor from "../RichTextEditor";
 
 function CommonForm({
   formControls,
@@ -69,7 +70,7 @@ function CommonForm({
         break;
       case "textarea":
         element = (
-          <Textarea
+          <RichTextEditor
             name={getControlItem.name}
             placeholder={getControlItem.placeholder}
             id={getControlItem.id}
@@ -77,7 +78,7 @@ function CommonForm({
             onChange={(event) =>
               setFormData({
                 ...formData,
-                [getControlItem.name]: event.target.value,
+                [getControlItem.name]: event,
               })
             }
           />

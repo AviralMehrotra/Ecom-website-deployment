@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import AuthLayout from "./components/auth/layout";
+import DevelopmentFooter from "./components/shopping/development-footer";
 import AuthLogin from "./pages/auth/login";
 import AuthRegister from "./pages/auth/register";
 import AdminLayout from "./components/admin/layout";
@@ -81,6 +82,7 @@ function App() {
         <Route path="/" element={<Navigate to="/auth/login" />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <DevelopmentFooter />
     </div>
   );
 }

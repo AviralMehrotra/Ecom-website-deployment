@@ -72,9 +72,13 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
               {productDetails?.title}
             </DialogTitle>
             {/* <h1 className="text-3xl font-extrabold">{productDetails?.title}</h1> */}
-            <p className="text-muted-foreground text-l mb-5 mt-4 overflow-auto">
+            {/* <p className="text-muted-foreground text-l mb-5 mt-4 overflow-auto">
               {productDetails?.description}
-            </p>
+            </p> */}
+            <div
+              className="text-muted-foreground text-l mb-5 mt-4 overflow-auto"
+              dangerouslySetInnerHTML={{ __html: productDetails?.description }}
+            />
             <div className="flex items-center justify-between">
               <p
                 className={` text-3xl font-bold text-primary ${
