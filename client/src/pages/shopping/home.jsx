@@ -1,18 +1,29 @@
 import { Button } from "@/components/ui/button";
-import bannerOne from "../../assets/banner-1.jpg";
-import bannerTwo from "../../assets/banner-2.jpg";
-import bannerThree from "../../assets/banner-3.jpg";
+import bannerOne from "../../assets/banner-1.png";
+import bannerTwo from "../../assets/banner-2.png";
+import bannerThree from "../../assets/banner-3.png";
+import bajaj from "../../assets/Icons/bajaj.jpg";
+import havells from "../../assets/Icons/havells.jpg";
+import maharaja from "../../assets/Icons/maharaja.png";
+import phillips from "../../assets/Icons/phillips.png";
+import sujata from "../../assets/Icons/sujata.png";
+import crompton from "../../assets/Icons/crompton.jpg";
+import eureka from "../../assets/Icons/eureka.png";
+import indo from "../../assets/Icons/indo.jpg";
+import kent from "../../assets/Icons/kent.png";
+import livpure from "../../assets/Icons/livpure.png";
+import luminous from "../../assets/Icons/luminous.png";
+import symphony from "../../assets/Icons/symphony.png";
+import vansal from "../../assets/Icons/vansal.jpg";
+import vguard from "../../assets/Icons/vguard.png";
+import microtek from "../../assets/Icons/microtek.png";
 import {
   BatteryCharging,
   Cctv,
   ChevronLeftIcon,
   ChevronRightIcon,
   CookingPot,
-  Droplet,
   Droplets,
-  Fan,
-  FanIcon,
-  GlassWater,
   Lightbulb,
   Power,
   Snowflake,
@@ -44,20 +55,21 @@ const categoriesWithIcon = [
 ];
 
 const brandsWithIcon = [
-  { id: "bajaj", label: "Bajaj", icon: CookingPot },
-  { id: "havells", label: "Havells", icon: Fan },
-  { id: "sujata", label: "Sujata", icon: CookingPot },
-  { id: "phillips", label: "Phillips", icon: Lightbulb },
-  { id: "microtek", label: "Microtek", icon: BatteryCharging },
-  { id: "livpure", label: "Livpure", icon: GlassWater },
-  { id: "luminous", label: "Luminous", icon: GlassWater },
-  { id: "indo", label: "Indo", icon: GlassWater },
-  { id: "symphony", label: "Symphony", icon: GlassWater },
-  { id: "crompton", label: "Crompton", icon: GlassWater },
-  { id: "vguard", label: "V-Guard", icon: Droplet },
-  { id: "vansal", label: "Vansal", icon: FanIcon },
-  { id: "kent", label: "Kent", icon: Droplet },
-  { id: "eureka", label: "Eureka", icon: Droplet },
+  { id: "bajaj", label: "Bajaj", icon: bajaj },
+  { id: "havells", label: "Havells", icon: havells },
+  { id: "sujata", label: "Sujata", icon: sujata },
+  { id: "maharaja", label: "Maharaja", icon: maharaja },
+  { id: "phillips", label: "Phillips", icon: phillips },
+  { id: "microtek", label: "Microtek", icon: microtek },
+  { id: "livpure", label: "Livpure", icon: luminous },
+  { id: "luminous", label: "Luminous", icon: livpure },
+  { id: "indo", label: "Indo", icon: indo },
+  { id: "symphony", label: "Symphony", icon: symphony },
+  { id: "crompton", label: "Crompton", icon: crompton },
+  { id: "vguard", label: "V-Guard", icon: vguard },
+  { id: "vansal", label: "Vansal", icon: vansal },
+  { id: "kent", label: "Kent", icon: kent },
+  { id: "eureka", label: "Eureka", icon: eureka },
 ];
 
 function ShoppingHome() {
@@ -143,9 +155,10 @@ function ShoppingHome() {
   useEffect(() => {
     if (productDetails !== null) setOpenDetailsDialog(true);
   }, [productDetails]);
+
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="relative w-full h-[600px] overflow-hidden">
+      <div className="relative w-full h-[200px] lg:h-[700px] md:h-[500px] sm:h-[300px] overflow-hidden">
         {slides.map((slide, index) => (
           <img
             src={slide}
@@ -214,7 +227,12 @@ function ShoppingHome() {
                 key={brandItem.id}
               >
                 <CardContent className="flex flex-col items-center justify-center p-6">
-                  <brandItem.icon className="w-12 h-12 mb-4 text-primary" />
+                  {/* <brandItem.icon className="w-12 h-12 mb-4 text-primary" /> */}
+                  <img
+                    src={brandItem.icon}
+                    alt={`${brandItem.label} Icon`}
+                    className="w-[15vh] h-12 mb-4 object-contain"
+                  />
                   <span className="font-bold">{brandItem.label}</span>
                 </CardContent>
               </Card>

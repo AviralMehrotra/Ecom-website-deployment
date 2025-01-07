@@ -77,6 +77,7 @@ export const addProductFormElements = [
       { id: "bajaj", label: "Bajaj" },
       { id: "havells", label: "Havells" },
       { id: "sujata", label: "Sujata" },
+      { id: "maharaja", label: "Maharaja" },
       { id: "phillips", label: "Phillips" },
       { id: "microtek", label: "Microtek" },
       { id: "livpure", label: "Livpure" },
@@ -181,6 +182,7 @@ export const brandOptionsMap = {
   bajaj: "Bajaj",
   havells: "Havells",
   sujata: "Sujata",
+  maharaja: "Maharaja",
   phillips: "Phillips",
   microtek: "Microtek",
   livpure: "Livpure",
@@ -191,7 +193,7 @@ export const brandOptionsMap = {
   vguard: "V-Guard",
   vansal: "Vansal",
   kent: "Kent",
-  eureka: "Eureka Formes",
+  eureka: "Eureka Forbes",
 };
 
 export const filterOptions = {
@@ -209,6 +211,7 @@ export const filterOptions = {
     { id: "bajaj", label: "Bajaj" },
     { id: "havells", label: "Havells" },
     { id: "sujata", label: "Sujata" },
+    { id: "maharaja", label: "Maharaja" },
     { id: "phillips", label: "Phillips" },
     { id: "microtek", label: "Microtek" },
     { id: "livpure", label: "Livpure" },
