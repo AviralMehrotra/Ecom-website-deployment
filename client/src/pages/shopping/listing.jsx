@@ -16,7 +16,7 @@ import {
   fetchAllFilteredProducts,
   fetchProductDetails,
 } from "@/store/shop/products-slice";
-import { ArrowUpDownIcon } from "lucide-react";
+import { ArrowUpDownIcon, ChevronDownIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
@@ -34,6 +34,9 @@ function createSearchParamsHelper(filterParams) {
 }
 
 function ShoppingListing() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const dispatch = useDispatch();
   const { productList, productDetails } = useSelector(
     (state) => state.shopProducts
@@ -149,9 +152,42 @@ function ShoppingListing() {
     if (productDetails !== null) setOpenDetailsDialog(true);
   }, [productDetails]);
 
+  useEffect(() => {
+    // Detect if the screen size is mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6 p-4 md:p-6">
-      <ProductFilter filters={filters} handleFilter={handleFilter} />
+      {isMobile && (
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-lg font-bold">Filters & Sort</h2>
+          <button
+            onClick={() => setMenuOpen((prev) => !prev)}
+            className="flex items-center gap-1 px-2 py-1 bg-gray-100 rounded"
+          >
+            <ChevronDownIcon
+              className={`h-4 w-4 transform ${
+                menuOpen ? "rotate-180" : "rotate-0"
+              }`}
+            />
+          </button>
+        </div>
+      )}
+
+      {(menuOpen || !isMobile) && (
+        <ProductFilter filters={filters} handleFilter={handleFilter} />
+      )}
+
       <div className="bg-background w-full rounded-lg shadow-sm">
         <div className="p-4 border-b flex items-center justify-between">
           <h2 className="text-lg font-bold">All Products</h2>
