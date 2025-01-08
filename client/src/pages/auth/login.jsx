@@ -38,6 +38,14 @@ function AuthLogin() {
           Login to your Account
         </h1>
       </div>
+      {/* <div className="text-center">
+        <Link
+          className="text-blue-800 font-medium text-primary hover:underline"
+          to="/shop/home"
+        >
+          Skip LogIn
+        </Link>
+      </div> */}
       <CommonForm
         formControls={loginFormControls}
         buttonText={"Login"}
@@ -52,6 +60,13 @@ function AuthLogin() {
           to="/auth/register"
         >
           Sign Up now
+        </Link>{" "}
+        or
+        <Link
+          className="text-blue-800 ml-2 font-medium text-primary hover:underline"
+          to="/shop/home"
+        >
+          Skip LogIn
         </Link>
       </p>
     </div>

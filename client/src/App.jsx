@@ -67,11 +67,12 @@ function App() {
         </Route>
         <Route
           path="/shop"
-          element={
-            <CheckAuth isAuthenticated={isAuthenticated} user={user}>
-              <ShoppingLayout />
-            </CheckAuth>
-          }
+          element={<ShoppingLayout />}
+          // element={
+          //   <CheckAuth isAuthenticated={isAuthenticated} user={user}>
+          //     <ShoppingLayout />
+          //   </CheckAuth>
+          // }
         >
           <Route path="home" element={<ShoppingHome />} />
           <Route path="account" element={<ShoppingAccounts />} />
@@ -79,7 +80,8 @@ function App() {
           <Route path="listing" element={<ShoppingListing />} />
           <Route path="search" element={<SearchProducts />} />
         </Route>
-        <Route path="/" element={<Navigate to="/auth/login" />} />
+        {/* <Route path="/" element={<Navigate to="/auth/login" />} /> */}
+        <Route path="/" element={<Navigate to="/shop/home" />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <DevelopmentFooter />

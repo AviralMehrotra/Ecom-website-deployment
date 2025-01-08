@@ -56,6 +56,13 @@ function AuthRegister() {
           to="/auth/login"
         >
           Login
+        </Link>{" "}
+        or
+        <Link
+          className="text-blue-800 ml-2 font-medium text-primary hover:underline"
+          to="/shop/home"
+        >
+          Skip Register
         </Link>
       </p>
     </div>
